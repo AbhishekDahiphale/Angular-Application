@@ -1,0 +1,10 @@
+<h1>
+  Inside Root Component
+</h1>
+<h1>send Message to student <button (click)="fun()">Send</button></h1>
+
+<h1 *ngIf="flag" >
+  <app-child (obj) = "TakeMessage = $event" [MsgParent]="Message"></app-child>
+</h1>
+<h1>Student : {{TakeMessage}}</h1>
+<button (click)="clear()">Clear</button>

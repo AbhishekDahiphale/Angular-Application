@@ -1,0 +1,8 @@
+<app-header></app-header><br>
+<app-personal-info (Event1)= "Fname = $event" (Event2)= "lname = $event" (Event3)= "mail = $event" ></app-personal-info>
+<app-bug-info (Event4) = "date = $event" (Event5) = "time = $event" (Event6) = "TextArea = $event" (Event7) = "Impact = $event" ></app-bug-info>
+<app-footer (Myevent)= "flag = $event"></app-footer>
+<p *ngIf= "flag"><app-display [First_Name] = "Fname" [Last_Name] = "lname" [EMail] = "mail" [Date] = "date" [Time] = "time" [Impact] = "Impact" [Text] = "TextArea" ></app-display>  </p>
+
+<router-outlet></router-outlet>
+

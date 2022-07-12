@@ -1,0 +1,9 @@
+<h1>
+  Inside Root Component
+</h1>
+
+<h1>
+  <app-child (obj) = "TakeMessage = $event"></app-child>
+</h1>
+<h1>Message From Child : {{TakeMessage}}</h1>
+<button (click)="clear()">Clear</button>

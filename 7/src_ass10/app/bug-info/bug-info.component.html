@@ -1,0 +1,31 @@
+<p *ngIf= "true"> {{gun()}} </p>
+
+<label>Data and time you first noticed this bug*</label><br>
+      <div class="col-2">
+        <div class="input-group">
+          <input class="form-control" placeholder="dd-mm-yyyy"
+                 name="dp" [(ngModel)]= "model" ngbDatepicker #d="ngbDatepicker">
+          <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+          <i class="fas fa-calendar input-prefix"></i>
+        </div>
+      </div>
+      <ngb-timepicker [(ngModel)]="time" [seconds]="seconds"></ngb-timepicker>
+      <br><br>
+      
+<label>Impact</label>   
+<div class="row-2">
+    <div class="col-2">
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{dropdn}}</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">   
+          <button ngbDropdownItem (click)="Low()">Low</button>
+          <button ngbDropdownItem (click)="High()">High</button>
+          <button ngbDropdownItem (click)="Medium()">Midum</button>
+        </div>
+      </div>
+    </div> <br>  
+
+        <div class="mb-3">
+          <label for="validationTextarea">Detailed Explanation Of bug</label>
+          <input [(ngModel)] = "tear" class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" type="text" >
+        </div>

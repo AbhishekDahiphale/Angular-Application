@@ -1,0 +1,49 @@
+.image
+{
+  float: initial;
+  margin-left: 850px;
+  margin-top: -60px;
+ 
+}
+
+.ContactOur
+{
+    margin-top: 20px;
+    margin-right: 350px;
+    color: #df73ff;
+    text-shadow: #df73ff;
+    font-size:80px;
+}
+
+.ContactSupport
+{
+    margin-top: -30px;
+    margin-right: 330px;
+    font-size: 30px;
+}
+.ContactInformation
+{
+    margin-right: 500px;
+    margin-top: 50px;
+    font-size: 30px;
+}
+.ContactInformation1
+{
+    margin-right: 500px;
+    margin-top: 20px;
+    font-size: 15px;
+}
+.header
+{
+    size: 50px;
+}
+
+.star
+{
+    color: red;
+}
+
+.button
+{
+    text-align: center;
+}

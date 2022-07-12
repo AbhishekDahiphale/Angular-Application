@@ -1,0 +1,16 @@
+<h1>Inside Child</h1>
+
+  <ng-template #prime>
+      <h2>{{num}} is Prime</h2>
+  </ng-template>
+  
+  <ng-template #nonprime>
+      <h2>{{num}} is not Prime</h2>
+  </ng-template>
+  
+  <h2 *ngIf = "bret ; then prime ; else nonprime">
+  </h2>
+
+  <h2>
+    {{str}} string contains {{bcnt}} Capital characters
+</h2>

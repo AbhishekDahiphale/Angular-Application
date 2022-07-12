@@ -1,0 +1,69 @@
+<div class = "container-fluid" >
+    <div class="header">
+    <h1 class="ContactOur" style="text-align:center ;">Contact Our</h1>
+    <img class="image" alt="Image of Seal" src="assets\logo.png">
+    <h1 class="ContactSupport" style="text-align:center ;" >Customer Support Center</h1> 
+    <h2 class="ContactInformation" style="text-align: right;" >Contact Information</h2>
+    <p class="ContactInformation1" style="text-align: right;" >Please fill out your contact information below</p> 
+    </div>
+
+
+    <form [formGroup] = "MarvellousForm" (ngSubmit)="submit()">
+        <div class="form-Group">
+            <label>Name<sup class="star">*</sup></label>
+            <div class="form-group" >
+                <td> <input size="50px" [class.is-invalid] = "MarvellousForm.get('FirstName')?.invalid" placeholder="FirstName" type="text" class="form-control" formControlName="FirstName" >
+                <label>FirstName</label><small [class.d-none]="MarvellousForm.get('FirstName')?.valid" class="text-danger">Firstname is required</small>
+                </td>
+
+                <td><input size="50px" [class.is-invalid] = "MarvellousForm.get('LastName')?.invalid" placeholder="LastName" type="text" class="form-control" formControlName="LastName" >
+                <label>LastName</label><small [class.d-none]="MarvellousForm.get('LastName')?.valid" class="text-danger">Lastname is required</small></td> <br>
+                
+                <label>Email Id <sup class="star" >*</sup> </label>
+                <td><input size="100px" [class.is-invalid] = "MarvellousForm.get('Email')?.invalid" placeholder="abc@gmail.com" type="email" class="form-control" formControlName="Email" >
+                <small [class.d-none]="MarvellousForm.get('Email')?.valid" class="text-danger">Email is required</small>
+                </td><br>
+
+                <label>Phone No.<sup class="star" >*</sup> </label>
+                <td><input size="100px" [class.is-invalid] = "MarvellousForm.get('telephone')?.invalid" placeholder="+91 0000000000" type="tel" class="form-control" formControlName="telephone" >
+                <small [class.d-none]="MarvellousForm.get('telephone')?.valid" class="text-danger">Phone No. is required</small>
+                </td><br>
+                
+              
+                <label>Address</label><br>
+                <td><input size="50px" [class.is-invalid] ="MarvellousForm.get('comments')?.invalid" placeholder="253 N. Cherry St." type="text" class="form-control" formControlName="comments"> 
+                <label>comments</label>          <small [class.d-none]="MarvellousForm.get('comments')?.valid" class="text-danger">length is excied</small>
+
+                <td><input size="50px" [class.is-invalid] = "MarvellousForm.get('city')?.invalid" placeholder = "Pune" type="text" class="form-control" formControlName = "city">
+                    <label>City</label><small [class.d-none]="MarvellousForm.get('city')?.valid" class="text-danger">City is required</small>  
+                </td>
+
+                <br>
+            
+            <td><input size="50px" [class.is-invalid] = "MarvellousForm.get('code')?.invalid" placeholder = "412307" type="tel" class="form-control" formControlName = "code">
+                <label>Postal Code</label><small [class.d-none]="MarvellousForm.get('code')?.valid" class="text-danger">code is required</small>  
+            </td>
+                <td>
+                    <select [class.is-invalid] = "MarvellousForm.get('state')?.invalid" aria-setsize="50px" class="form-select" aria-label="Default select Example" class="form-control" formControlName = "state">
+                       <option value="" disabled>Choose State</option>
+                        <option *ngFor="let st of State" value= '{{st}}' > {{st}} </option>
+                    </select>
+           
+                    <label>State</label>  <small [class.d-none]="MarvellousForm.get('state')?.valid" class="text-danger">state is required</small>  
+                </td>              
+                
+            </div>
+            <div class="button" >
+                <button class="btn btn-primary" type="submit" [disabled]="!MarvellousForm.valid">Submit</button>
+            </div>          
+        </div>
+    </form>
+</div>
+
+<div *ngIf="flag"  style="text-align:center ;">
+    <h1 >Information</h1>
+    <li>Name :  {{value.FirstName}} {{value.LastName}}</li>
+    <li>Email : {{value.Email}}</li>
+    <li>Phone No. : {{value.telephone}}</li>
+    <li>address : {{value.comments}} , {{value.city}} , {{value.state}} ,{{value.code}}</li>
+</div>
